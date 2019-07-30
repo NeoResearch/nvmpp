@@ -4,6 +4,13 @@
 
 This project is part of the [neopt](https://github.com/neoresearch/neopt) macro project, a C++ implementation of Neo Blockchain components, focused on portability.
 
+### Development Steps
+
+* finish BigInteger libraries: completed
+
+* port BigInteger libraries to NeoVM: ongoing
+
+* port json tests: todo
 
 ### Why chosing C/C++ language for that?
 Existing frameworks use high-level languages that may not be suitable for very lightweight architectures,
