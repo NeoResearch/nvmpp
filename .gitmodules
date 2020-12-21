@@ -1,3 +1,6 @@
 [submodule "tests/libgtest"]
 	path = tests/libgtest
 	url = https://github.com/google/googletest.git
+[submodule "thirdparty/neo-vm-3"]
+	path = thirdparty/neo-vm-3
+	url = https://github.com/neo-project/neo-vm.git
