@@ -11,18 +11,18 @@ namespace nvm3 {
 //
 struct OpCodeInfo
 {
-   uint8_t number;               // opcode number
+   uint8_t code;                 // opcode code number
    std::string_view name;        // opcode name
    int opSize;                   // operand size
    int opPrefixSize;             // operand prefix size (real size may be variable)
    std::string_view description; // opcode description
 
-   constexpr OpCodeInfo(uint8_t number,
+   constexpr OpCodeInfo(uint8_t code,
                         const char* name,
                         int opSize,
                         int opPrefixSize,
                         const char* description)
-     : number{ number }
+     : code{ code }
      , name{ name }
      , opSize{ opSize }
      , opPrefixSize{ opPrefixSize }
@@ -32,7 +32,7 @@ struct OpCodeInfo
 
 struct OpCodeInfoGlobal
 {
-   constexpr static std::array<OpCodeInfo, 220> optext = {
+   constexpr static std::array<OpCodeInfo, 220> oplist = {
       //#region Constants
       OpCodeInfo{ 0x00, "PUSHINT8", 1, 0, "PUSH INT WITH 8 BITS" },
       OpCodeInfo{ 0x01, "PUSHINT16", 2, 0, "PUSH INT WITH 16 BITS" },
@@ -273,6 +273,11 @@ struct OpCodeInfoGlobal
       //#endregion // Types
    };
 };
+// check first and last (at compile time)
+// 0x00
+static_assert(OpCodeInfoGlobal::oplist[OP_PUSHINT8].name == "PUSHINT8");
+// 0xdb
+static_assert(OpCodeInfoGlobal::oplist[OP_CONVERT].name == "CONVERT");
 //
 } // namespace nvm3
 
