@@ -12,6 +12,15 @@ This project is part of the [neopt](https://github.com/neoresearch/neopt) macro 
 
 * port json tests: todo
 
+
+### Commit-lock at reference C# core project
+
+Currently, `thirdparty/neo-vm-3` is locked at [https://github.com/neo-project/neo-vm.git](neo-vm) project, master branch:
+- commit `defb2371d9a6a032bdea94e0c8b903a4729c9152` - date: `Fri Dec 18 17:22:02 2020 +0800`
+
+Please use this as reference, and only advance when C++ project is ready to evolve (or is locked for so long time...) 
+
+
 ### Why chosing C/C++ language for that?
 Existing frameworks use high-level languages that may not be suitable for very lightweight architectures,
 such as microcontrollers with very limited computing capabilities.
